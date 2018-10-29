@@ -1,0 +1,28 @@
+group 'hadoop'
+version '1.0-SNAPSHOT'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    compile(
+            "org.apache.hadoop:hadoop-common:2.9.1",
+            "org.apache.hadoop:hadoop-client:2.9.1",
+            "org.apache.hadoop:hadoop-hdfs:2.9.1",
+            "org.apache.hadoop:hadoop-mapreduce-client-core:2.9.1",
+            "org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.9.1",
+            "org.apache.hadoop:hadoop-mapreduce-client-common:2.9.1",
+    )
+}
